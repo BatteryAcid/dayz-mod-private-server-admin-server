@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 export let controller = {
     get: (req: Request, res: Response, next: NextFunction) => {
-        res.json({ok: true});
+        res.json([{id: "asdf"}]);
     },
     getById: (req: Request, res: Response, next: NextFunction) => {
         res.json({ok: true});
