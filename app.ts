@@ -5,7 +5,11 @@ import { errorHandler } from './src/middleware/error-handler';
 import { appMiddleware } from './src/middleware/app-middleware';
 import logger from './src/util/logger';
 import config from './src/config';
+import "reflect-metadata";
+import { createDatabaseConnection } from './src/config/database';
 
+//establish database connection
+createDatabaseConnection();
 
 // Create Express server
 let app = express();

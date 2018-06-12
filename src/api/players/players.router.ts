@@ -1,7 +1,6 @@
 import { Router } from 'express';
-import { controller } from './players.controller';
+import * as controller from './players.controller';
 
-//let router = Router();
 let router = Router();
 
 router.route('/')
@@ -11,7 +10,7 @@ router.route('/')
 router.route('/:id')
     .get(controller.getById)
     .put(controller.put)
-    .delete(controller.delete);
+    .delete(controller.remove);
 
 
 export let playersRouter = router;

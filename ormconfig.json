@@ -1,0 +1,19 @@
+{
+   "type": "mysql",
+   "host": "dayz-init-db.cweywr7zrbul.us-east-1.rds.amazonaws.com",
+   "port": 3306,
+   "username": "dayzhivemind",
+   "password": "dayzhivemind",
+   "database": "dayz_init_db",
+   "synchronize": false,
+   "logging": true,
+   "entities": [
+      "src/api/**/*.ts"
+   ],
+   "migrations": [
+      "src/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ]
+}
