@@ -2,7 +2,7 @@
   "name": "dayz-mod-private-server-admin-server",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
     "start": "npm run build:live",
     "build": "node ./node_modules/typescript/lib/tsc",
