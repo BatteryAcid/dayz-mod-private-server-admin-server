@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import * as controller from './players.controller';
+import * as controller from './characterData.controller';
 
 let router = Router();
 
@@ -12,4 +12,4 @@ router.route('/:id')
    .put(controller.put)
    .delete(controller.remove);
 
-export let playersRouter = router;
+export let characterDataRouter = router;
