@@ -4,9 +4,18 @@ import { getManager } from "typeorm";
 import logger from '../../util/logger';
 
 export async function get(req: Request, res: Response, next: NextFunction) {
-   const postRepository = getManager().getRepository(CharacterData);
-   const characterData = await postRepository.find();
+   const getRepository = getManager().getRepository(CharacterData);
+   const characterData = await getRepository.find();
    logger.log(characterData);
+   res.json(characterData);
+}
+
+export async function getAlive(req: Request, res: Response, next: NextFunction) {
+   const getRepository = getManager().getRepository(CharacterData);
+   const characterData = await getRepository.createQueryBuilder("characterData")
+      .where("characterData.alive = :alive", { alive: 1 })
+      .getMany();
+   // logger.log(characterData);
    res.json(characterData);
 }
 

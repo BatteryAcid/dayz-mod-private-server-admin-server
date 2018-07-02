@@ -4,8 +4,8 @@ import {getManager} from "typeorm";
 import logger from '../../util/logger';
 
 export async function get(req: Request, res: Response, next: NextFunction) {
-    const postRepository = getManager().getRepository(Player);
-    const players =  await postRepository.find();
+    const getRepository = getManager().getRepository(Player);
+    const players =  await getRepository.find();
     logger.log(players);
     res.json(players);
 }

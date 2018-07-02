@@ -7,6 +7,9 @@ router.route('/')
    .get(controller.get)
    .post(controller.post);
 
+router.route('/alive')
+   .get(controller.getAlive);
+   
 router.route('/:id')
    .get(controller.getById)
    .put(controller.put)

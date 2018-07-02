@@ -3,11 +3,11 @@ import { Entity, Column, PrimaryColumn, ColumnType } from "typeorm";
 @Entity('character_data')
 export class CharacterData {
 
-   @Column()
-   playerID: number;
-
    @PrimaryColumn()
    characterID: number;
+
+   @Column()
+   playerID: number;
 
    @Column()
    playerUID: number;
@@ -16,31 +16,40 @@ export class CharacterData {
    instanceID: number;
 
    @Column("datetime")
-   Datestamp: Date;
+   datestamp: Date;
 
    @Column("datetime")
-   LastLogin: Date;
+   lastLogin: Date;
 
-   @Column("longtext")
-   Inventory: string;
+   @Column("json")
+   inventory: string;
 
-   @Column("longtext")
-   Backpack: string;
+   @Column("json")
+   backpack: string;
 
    @Column()
-   Worldspace: string;
+   worldspace: string;  
+
+   @Column()
+   medical: string;
+   
+   @Column()
+   alive: number;
+   
+   @Column()
+   generation: number;
 
    @Column("datetime")
-   LastAte: Date;
+   lastAte: Date;
 
    @Column("datetime")
-   LastDrank: Date;
+   lastDrank: Date;
 
    @Column()
-   KillsZ: number;
+   killsZ: number;
 
    @Column()
-   HeadshotsZ: number;
+   headshotsZ: number;
 
    @Column()
    distanceFoot: number;
@@ -52,16 +61,16 @@ export class CharacterData {
    currentState: string;
 
    @Column()
-   KillsH: number;
+   killsH: number;
 
    @Column()
-   Model: string;
+   model: string;
 
    @Column()
-   KillsB: number;
+   killsB: number;
 
    @Column()
-   Humanity: number;
+   humanity: number;
 
    @Column("datetime")
    last_updated: Date;
